@@ -8,7 +8,10 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
+
 """
+
+import django_heroku #new
 
 from pathlib import Path
 
@@ -25,7 +28,7 @@ SECRET_KEY = 't&)7ueh2irmq4@)*pt=upgz^o*d(3g=-dw-j8t(7e-@-5w)o^3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.herokuapp.com', 'localhost', '127.0.0.1', 'calm-meadow-07597.herokuapp.com','http://127.0.0.1:8000/']
 
 
 # Application definition
@@ -113,6 +116,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+django_heroku.settings(locals()) #new
 
 
 # Static files (CSS, JavaScript, Images)
